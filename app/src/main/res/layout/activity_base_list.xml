@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/layout_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title">
+
+        <LinearLayout
+            android:id="@+id/head_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/commom_bg"
+            android:orientation="vertical"
+            ></LinearLayout>
+
+
+        <FrameLayout
+            android:layout_below="@id/head_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhangdong.yidian_client.view.EmptyLayout
+                android:id="@+id/empty_layout"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.external.pullrefresh.swipe.RefreshLvLayout
+                android:id="@+id/swiperefreshlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+
+                <com.lizhi.library.widget.SwipeListView
+                    android:id="@+id/list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@color/line"
+                    android:layoutAnimation="@anim/default_layout_show"
+                    android:dividerHeight="@dimen/line"
+                    android:descendantFocusability="blocksDescendants"
+                    android:scrollbars="none"
+                    android:background="@color/commom_bg"
+                    android:scrollingCache="true" />
+
+            </com.external.pullrefresh.swipe.RefreshLvLayout>
+
+
+        </FrameLayout>
+
+        <include
+            layout="@layout/loading"
+            android:layout_below="@id/head_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
